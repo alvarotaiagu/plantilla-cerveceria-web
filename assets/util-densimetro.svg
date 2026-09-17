@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240" role="img" aria-label="Ilustración de una probeta con un densímetro flotando">
+  <rect width="360" height="240" fill="#15171A"/>
+  <g stroke="#1D2026" stroke-width="1">
+    <path d="M0 40h360M0 80h360M0 120h360M0 160h360M0 200h360M40 0v240M80 0v240M120 0v240M160 0v240M200 0v240M240 0v240M280 0v240M320 0v240"/>
+  </g>
+  <defs><clipPath id="probeta"><path d="M146 26 h68 v168 a34 14 0 0 1 -68 0 Z"/></clipPath></defs>
+  <g clip-path="url(#probeta)"><rect x="146" y="92" width="68" height="120" fill="#B07A2A" opacity=".5"/></g>
+  <path d="M146 26 h68 v168 a34 14 0 0 1 -68 0 Z" fill="none" stroke="#5A626D" stroke-width="3"/>
+  <path d="M146 92 h68" stroke="#FF2E8A" stroke-width="3"/>
+  <g stroke="#3A4048" stroke-width="2">
+    <path d="M146 120 h16M146 148 h16M146 176 h16M198 120 h16M198 148 h16M198 176 h16"/>
+  </g>
+  <g>
+    <rect x="172" y="60" width="16" height="70" rx="8" fill="#1E222A" stroke="#8A929C" stroke-width="2"/>
+    <circle cx="180" cy="138" r="16" fill="#1E222A" stroke="#8A929C" stroke-width="2"/>
+    <circle cx="180" cy="152" r="7" fill="#8A929C"/>
+    <g stroke="#8A929C" stroke-width="1.5">
+      <path d="M174 72 h8M174 82 h8M174 92 h8M174 102 h8M174 112 h8"/>
+    </g>
+  </g>
+  <path d="M244 60 h84 v40 h-84 z" fill="#1E222A" stroke="#3A4048" stroke-width="2"/>
+  <text x="252" y="88" fill="#FF2E8A" font-family="Chivo Mono, monospace" font-size="22" letter-spacing="1">1.012</text>
+  <text x="24" y="228" fill="#8A929C" font-family="Chivo Mono, monospace" font-size="13" letter-spacing="2">DENSÍMETRO · DENSIDAD FINAL</text>
+</svg>

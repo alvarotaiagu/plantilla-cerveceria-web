@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54" width="54" height="54" role="img" aria-label="TRASFEGA">
+  <defs><clipPath id="tf-vaso"><path d="M14 10 h26 v22 l-13 14 l-13 -14 Z"/></clipPath></defs>
+  <g clip-path="url(#tf-vaso)"><rect x="14" y="24" width="26" height="24" fill="#FF2E8A"/></g>
+  <path d="M14 10 h26 v22 l-13 14 l-13 -14 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+  <path d="M10 10 h34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <path d="M27 10 V3" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+  <path d="M6 24 h8 M40 24 h8" stroke="#FF2E8A" stroke-width="3" stroke-linecap="round"/>
+</svg>

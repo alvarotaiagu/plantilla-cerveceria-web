@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  SITIO DE DEMOSTRACIÓN. TRASFEGA es un obrador de cerveza FICTICIO.
+  Nombre, dirección, teléfono, horarios, cervezas, números de lote, precios,
+  equipo y opiniones son datos de muestra inventados para enseñar la plantilla.
+  No corresponden a ninguna fábrica, marca ni persona real.
+  Contenido para mayores de 18 años. Plantilla reskineable: ver README.md.
+  ============================================================================
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRASFEGA · Obrador de cerveza en Betanzos (demo)</title>
+<meta name="description" content="Plantilla de demostración de un obrador de cerveza artesanal ficticio: la trasfega paso a paso, los lotes, las visitas y los pedidos. Todos los datos son de muestra.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="rating" content="adult">
+<meta name="theme-color" content="#0C0D0F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRASFEGA · Obrador de cerveza (sitio de demostración)">
+<meta property="og:description" content="Negocio ficticio. Plantilla de muestra con el proceso, los lotes y las visitas al obrador.">
+<meta property="og:image" content="assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;600;700&family=Chivo+Mono:wght@400;500&family=Chivo:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Brewery",
+  "name": "TRASFEGA",
+  "description": "Obrador de cerveza artesanal ficticio usado como plantilla de demostración.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rúa do Bocoi 4",
+    "addressLocality": "Betanzos",
+    "addressRegion": "A Coruña",
+    "postalCode": "15300",
+    "addressCountry": "ES"
+  },
+  "telephone": "+34981000000",
+  "email": "obrador@trasfega.example",
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Thursday","Friday"], "opens": "17:00", "closes": "20:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "11:00", "closes": "14:30" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-gota"></span><span class="cursor-texto" id="cursor-texto"></span></div>
+
+<header class="cabecera" id="cabecera">
+  <a class="marca" href="#inicio" aria-label="TRASFEGA, inicio">
+    <img src="assets/logo.svg" width="54" height="54" alt="" class="marca-mark">
+    <span class="marca-texto">TRASFEGA<em>obrador de cerveza · Betanzos</em></span>
+  </a>
+
+  <nav class="nav" id="nav" aria-label="Principal">
+    <ul class="nav-lista">
+      <li><a href="#trasfega">El proceso</a></li>
+      <li><a href="#lotes">Las cervezas</a></li>
+      <li><a href="#obrador">El obrador</a></li>
+      <li><a href="#visitas">Visitas</a></li>
+      <li><a href="#donde">Dónde está</a></li>
+      <li><a href="#pedidos">Pedidos</a></li>
+    </ul>
+    <a class="boton boton--magenta nav-cta" href="#visitas" data-iman>Reservar visita</a>
+  </nav>
+
+  <button class="hamburguesa" id="hamburguesa" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="contenido">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="inicio">
+    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-velo" aria-hidden="true"></div>
+
+    <div class="hero-cuerpo">
+      <p class="sobretitulo" data-aparecer>Obrador de cerveza · Betanzos · A Coruña · desde 2017</p>
+      <h1 class="titular titular--hero" data-revelar>Mil doscientos litros por colada y ninguna prisa</h1>
+      <p class="parrafo parrafo--grande" data-aparecer>Somos fábrica, no bar. Molemos, maceramos, cocemos, fermentamos
+        y envasamos aquí mismo, en una nave de Betanzos, en lotes pequeños que llevan escrito el día que
+        se hicieron.</p>
+      <div class="hero-acciones" data-aparecer>
+        <a class="boton boton--magenta" href="#visitas" data-iman>Reservar una visita</a>
+        <a class="boton boton--linea" href="#trasfega" data-iman>Ver la trasfega</a>
+      </div>
+      <dl class="hero-datos" data-aparecer>
+        <div><dt>Colada</dt><dd>1.200 litros</dd></div>
+        <div><dt>Lotes al año</dt><dd>18, numerados</dd></div>
+        <div><dt>Tienda del obrador</dt><dd>jueves y viernes · sábado por la mañana</dd></div>
+      </dl>
+      <p class="hero-edad" data-aparecer><span>+18</span> Contenido sobre bebidas alcohólicas. No vendemos ni servimos a menores de 18 años.</p>
+    </div>
+  </section>
+
+  <!-- ================= FRANJA ================= -->
+  <section class="franja" aria-label="Materias primas">
+    <div class="franja-pista" id="franja-pista">
+      <div class="franja-grupo">
+        <span>Malta</span><i aria-hidden="true"></i><span>Agua</span><i aria-hidden="true"></i><span>Lúpulo</span><i aria-hidden="true"></i><span>Levadura</span><i aria-hidden="true"></i><span>Tiempo</span><i aria-hidden="true"></i>
+      </div>
+      <div class="franja-grupo" aria-hidden="true">
+        <span>Malta</span><i></i><span>Agua</span><i></i><span>Lúpulo</span><i></i><span>Levadura</span><i></i><span>Tiempo</span><i></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LA TRASFEGA (protagonista) ================= -->
+  <section class="trasfega" id="trasfega">
+    <div class="trasfega-cab">
+      <p class="rotulo"><span>01</span> El proceso</p>
+      <h2 class="titular" data-revelar>Cinco recipientes y una cerveza que va cambiando de casa</h2>
+      <p class="parrafo">Trasfegar es pasar el líquido de un sitio a otro dejando atrás lo que sobra. Entre el
+        saco de malta y la lata, esta cerveza lo hace cinco veces. Baja y míralo.</p>
+    </div>
+
+    <div class="trasfega-escena" id="trasfega-escena">
+      <div class="trasfega-lienzo">
+        <svg class="planta" id="planta" viewBox="0 0 1180 420" role="img"
+             aria-label="Esquema del obrador: molino, macerador, caldera de cocción, fermentador y envasado, unidos por tuberías.">
+          <defs>
+            <clipPath id="c-macerador"><path d="M232 120 h150 v170 a75 30 0 0 1 -150 0 Z"/></clipPath>
+            <clipPath id="c-caldera"><path d="M462 120 h150 v170 a75 30 0 0 1 -150 0 Z"/></clipPath>
+            <clipPath id="c-fermentador"><path d="M692 100 h150 v150 l-75 90 l-75 -90 Z"/></clipPath>
+            <clipPath id="c-barril"><rect x="932" y="150" width="140" height="150" rx="10"/></clipPath>
+          </defs>
+
+          <g class="tuberia" aria-hidden="true">
+            <path d="M140 250 H232 M382 250 H462 M612 250 H692 M842 250 H932" stroke="#2A2F36" stroke-width="10" stroke-linecap="round"/>
+            <path class="flujo" d="M140 250 H232 M382 250 H462 M612 250 H692 M842 250 H932" stroke="#FF2E8A" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 16"/>
+          </g>
+
+          <!-- 1. molino -->
+          <g class="vaso" data-vaso="molino">
+            <path d="M40 90 h100 l-16 60 h-68 Z" fill="#191C21" stroke="#4A515B" stroke-width="3"/>
+            <rect x="52" y="150" width="76" height="60" rx="6" fill="#191C21" stroke="#4A515B" stroke-width="3"/>
+            <circle cx="90" cy="180" r="18" fill="#0C0D0F" stroke="#4A515B" stroke-width="3"/>
+            <circle cx="90" cy="180" r="6" fill="#FF2E8A" class="vaso-punto"/>
+            <rect x="60" y="214" width="60" height="40" rx="4" fill="#12151A" stroke="#4A515B" stroke-width="3"/>
+            <text x="90" y="300" class="vaso-txt" text-anchor="middle">MOLINO</text>
+            <text x="90" y="322" class="vaso-dato" text-anchor="middle">280 kg</text>
+          </g>
+
+          <!-- 2. macerador -->
+          <g class="vaso" data-vaso="macerador">
+            <g clip-path="url(#c-macerador)">
+              <rect class="liquido" id="liq-macerador" x="232" y="170" width="150" height="150" fill="#7A4A2C"/>
+            </g>
+            <path d="M232 120 h150 v170 a75 30 0 0 1 -150 0 Z" fill="none" stroke="#5A626D" stroke-width="3"/>
+            <ellipse cx="307" cy="120" rx="75" ry="30" fill="#191C21" stroke="#5A626D" stroke-width="3"/>
+            <path d="M307 90 v-34 h40" fill="none" stroke="#4A515B" stroke-width="8" stroke-linecap="round"/>
+            <text x="307" y="360" class="vaso-txt" text-anchor="middle">MACERADOR</text>
+            <text x="307" y="382" class="vaso-dato" text-anchor="middle">67 °C · 60 min</text>
+          </g>
+
+          <!-- 3. caldera -->
+          <g class="vaso" data-vaso="caldera">
+            <g clip-path="url(#c-caldera)">
+              <rect class="liquido" id="liq-caldera" x="462" y="170" width="150" height="150" fill="#8A5A22"/>
+            </g>
+            <path d="M462 120 h150 v170 a75 30 0 0 1 -150 0 Z" fill="none" stroke="#5A626D" stroke-width="3"/>
+            <ellipse cx="537" cy="120" rx="75" ry="30" fill="#191C21" stroke="#5A626D" stroke-width="3"/>
+            <path class="vapor" d="M517 86 c 0 -18, 20 -18, 20 -36 M557 86 c 0 -22, -20 -22, -20 -44" fill="none" stroke="#6E7681" stroke-width="3" stroke-linecap="round"/>
+            <text x="537" y="360" class="vaso-txt" text-anchor="middle">CALDERA</text>
+            <text x="537" y="382" class="vaso-dato" text-anchor="middle">100 °C · 75 min</text>
+          </g>
+
+          <!-- 4. fermentador -->
+          <g class="vaso" data-vaso="fermentador">
+            <g clip-path="url(#c-fermentador)">
+              <rect class="liquido" id="liq-fermentador" x="692" y="150" width="150" height="190" fill="#B07A2A"/>
+            </g>
+            <path d="M692 100 h150 v150 l-75 90 l-75 -90 Z" fill="none" stroke="#5A626D" stroke-width="3"/>
+            <ellipse cx="767" cy="100" rx="75" ry="26" fill="#191C21" stroke="#5A626D" stroke-width="3"/>
+            <path d="M767 74 v-30" fill="none" stroke="#4A515B" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="767" cy="38" r="12" fill="#191C21" stroke="#4A515B" stroke-width="3"/>
+            <text x="767" y="378" class="vaso-txt" text-anchor="middle">FERMENTADOR</text>
+            <text x="767" y="400" class="vaso-dato" text-anchor="middle">19 °C · 12 días</text>
+          </g>
+
+          <!-- 5. envasado -->
+          <g class="vaso" data-vaso="envasado">
+            <g clip-path="url(#c-barril)">
+              <rect class="liquido" id="liq-envasado" x="932" y="180" width="140" height="120" fill="#C98A2E"/>
+            </g>
+            <rect x="932" y="150" width="140" height="150" rx="10" fill="none" stroke="#5A626D" stroke-width="3"/>
+            <path d="M932 190 h140 M932 260 h140" stroke="#5A626D" stroke-width="3"/>
+            <rect x="982" y="120" width="40" height="30" rx="4" fill="#191C21" stroke="#5A626D" stroke-width="3"/>
+            <text x="1002" y="340" class="vaso-txt" text-anchor="middle">ENVASADO</text>
+            <text x="1002" y="362" class="vaso-dato" text-anchor="middle">lata y barril</text>
+          </g>
+        </svg>
+      </div>
+
+      <ol class="pasos" id="pasos">
+        <li class="paso" data-vaso="molino">
+          <p class="paso-num">Paso 01</p>
+          <h3>Molienda</h3>
+          <p>Doscientos ochenta kilos de malta de cebada pasan por el molino la víspera. No se muele fino:
+            la cáscara tiene que quedar entera porque luego hace de filtro.</p>
+        </li>
+        <li class="paso" data-vaso="macerador">
+          <p class="paso-num">Paso 02</p>
+          <h3>Maceración</h3>
+          <p>Malta y agua a 67 grados durante una hora. Aquí el almidón se convierte en azúcar y se decide
+            si la cerveza va a ser seca o con cuerpo.</p>
+        </li>
+        <li class="paso" data-vaso="caldera">
+          <p class="paso-num">Paso 03</p>
+          <h3>Cocción</h3>
+          <p>Setenta y cinco minutos hirviendo. El lúpulo entra en tres tandas: la primera pone el amargor,
+            la última, el aroma. Es la parte que huele desde la calle.</p>
+        </li>
+        <li class="paso" data-vaso="fermentador">
+          <p class="paso-num">Paso 04</p>
+          <h3>Fermentación y guarda</h3>
+          <p>Doce días a 19 grados con la levadura trabajando, y otras dos semanas en frío. Es el tramo
+            largo y el que no se puede acortar sin que se note.</p>
+        </li>
+        <li class="paso" data-vaso="envasado">
+          <p class="paso-num">Paso 05</p>
+          <h3>Envasado</h3>
+          <p>Lata de 44 cl y barril de 20 litros, con el número de lote y la fecha impresos. Sin filtrar y
+            sin pasteurizar: por eso pedimos que se guarde en frío.</p>
+        </li>
+      </ol>
+    </div>
+
+    <p class="trasfega-aviso" id="trasfega-aviso" role="status">Paso 01 · Molienda</p>
+  </section>
+
+  <!-- ================= LOTES ================= -->
+  <section class="lotes" id="lotes">
+    <div class="lotes-cab">
+      <p class="rotulo"><span>02</span> Las cervezas</p>
+      <h2 class="titular" data-revelar>Cuatro fijas y lo que salga</h2>
+      <p class="parrafo">Cada lote lleva su número y su fecha de envasado. Los datos de abajo —graduación,
+        amargor y color— son los de la última colada de cada una; cambian un poco de lote a lote y por eso
+        van escritos en la lata, no solo aquí.</p>
+    </div>
+
+    <ul class="rejilla-lotes">
+      <li class="lote">
+        <div class="lote-cab">
+          <p class="lote-num">Lote 2026-014</p>
+          <span class="lote-color" style="--tono:#E0B24A" aria-hidden="true"></span>
+        </div>
+        <h3>Trasfega Clara</h3>
+        <p class="lote-estilo">Lager sin filtrar</p>
+        <p>Cuatro semanas de guarda en frío. La que se bebe en el obrador mientras se limpia el macerador.</p>
+        <dl class="lote-datos">
+          <div><dt>Alcohol</dt><dd>4,6 %</dd></div>
+          <div><dt>Amargor</dt><dd>22 IBU</dd></div>
+          <div><dt>Envasado</dt><dd>12/09/2026</dd></div>
+        </dl>
+      </li>
+      <li class="lote">
+        <div class="lote-cab">
+          <p class="lote-num">Lote 2026-011</p>
+          <span class="lote-color" style="--tono:#C9762A" aria-hidden="true"></span>
+        </div>
+        <h3>Bocoi</h3>
+        <p class="lote-estilo">Ale ámbar</p>
+        <p>Maltas tostadas y poco lúpulo. Es la que mejor aguanta el invierno y la que más piden en barril.</p>
+        <dl class="lote-datos">
+          <div><dt>Alcohol</dt><dd>5,4 %</dd></div>
+          <div><dt>Amargor</dt><dd>30 IBU</dd></div>
+          <div><dt>Envasado</dt><dd>28/08/2026</dd></div>
+        </dl>
+      </li>
+      <li class="lote">
+        <div class="lote-cab">
+          <p class="lote-num">Lote 2026-016</p>
+          <span class="lote-color" style="--tono:#D9C06A" aria-hidden="true"></span>
+        </div>
+        <h3>Corenta</h3>
+        <p class="lote-estilo">IPA de sesión</p>
+        <p>Tres tandas de lúpulo y cuarenta minutos de reposo antes de enfriar. Amarga, pero se puede tomar
+          más de una.</p>
+        <dl class="lote-datos">
+          <div><dt>Alcohol</dt><dd>4,2 %</dd></div>
+          <div><dt>Amargor</dt><dd>42 IBU</dd></div>
+          <div><dt>Envasado</dt><dd>19/09/2026</dd></div>
+        </dl>
+      </li>
+      <li class="lote">
+        <div class="lote-cab">
+          <p class="lote-num">Lote 2026-009</p>
+          <span class="lote-color" style="--tono:#3B2618" aria-hidden="true"></span>
+        </div>
+        <h3>Noite Pecha</h3>
+        <p class="lote-estilo">Stout seca</p>
+        <p>Cebada tostada y avena. Negra de verdad, con espuma que se queda pegada al vaso hasta el final.</p>
+        <dl class="lote-datos">
+          <div><dt>Alcohol</dt><dd>5,1 %</dd></div>
+          <div><dt>Amargor</dt><dd>36 IBU</dd></div>
+          <div><dt>Envasado</dt><dd>02/08/2026</dd></div>
+        </dl>
+      </li>
+      <li class="lote lote--temporada">
+        <div class="lote-cab">
+          <p class="lote-num">Lote 2026-017</p>
+          <span class="lote-color" style="--tono:#B9483F" aria-hidden="true"></span>
+        </div>
+        <h3>Vendima</h3>
+        <p class="lote-estilo">De temporada · otoño</p>
+        <p>Con mosto de uva de una viña de la comarca, fermentada aparte. Se hacen 600 litros y no se repite
+          hasta el año siguiente.</p>
+        <dl class="lote-datos">
+          <div><dt>Alcohol</dt><dd>6,2 %</dd></div>
+          <div><dt>Amargor</dt><dd>18 IBU</dd></div>
+          <div><dt>Envasado</dt><dd>26/09/2026</dd></div>
+        </dl>
+      </li>
+      <li class="lote lote--temporada">
+        <div class="lote-cab">
+          <p class="lote-num">Lote 2026-004</p>
+          <span class="lote-color" style="--tono:#8C9A3C" aria-hidden="true"></span>
+        </div>
+        <h3>Herbal</h3>
+        <p class="lote-estilo">De temporada · primavera</p>
+        <p>Trigo y hierbas del monte añadidas al final de la cocción. Turbia a propósito y muy suave.</p>
+        <dl class="lote-datos">
+          <div><dt>Alcohol</dt><dd>4,4 %</dd></div>
+          <div><dt>Amargor</dt><dd>14 IBU</dd></div>
+          <div><dt>Envasado</dt><dd>11/04/2026</dd></div>
+        </dl>
+      </li>
+    </ul>
+
+    <aside class="aviso-alcohol">
+      <p><span>+18</span> Esta página habla de bebidas alcohólicas. No vendemos a menores de 18 años, no
+        servimos a quien vaya a conducir y no contamos la cerveza como si fuese buena para la salud:
+        no lo es. Beber con cabeza o no beber.</p>
+    </aside>
+  </section>
+
+  <!-- ================= EL OBRADOR ================= -->
+  <section class="obrador" id="obrador">
+    <div class="obrador-texto">
+      <p class="rotulo"><span>03</span> El obrador</p>
+      <h2 class="titular" data-revelar>Una nave, cuatro tanques y una manguera</h2>
+      <p class="parrafo">Cuatrocientos metros cuadrados en el polígono, suelo con pendiente hacia el sumidero
+        y mucho acero inoxidable. La mitad del trabajo de un obrador es limpiar: el día de colada empieza a
+        las seis de la mañana y acaba fregando lo que se ha usado.</p>
+
+      <dl class="cifras" id="cifras">
+        <div><dt>litros por colada</dt><dd><span class="contador" data-hasta="1200">1200</span></dd></div>
+        <div><dt>fermentadores</dt><dd><span class="contador" data-hasta="4">4</span></dd></div>
+        <div><dt>lotes al año</dt><dd><span class="contador" data-hasta="18">18</span></dd></div>
+        <div><dt>horas de colada</dt><dd><span class="contador" data-hasta="9">9</span></dd></div>
+      </dl>
+    </div>
+
+    <ul class="equipo">
+      <li>
+        <img src="assets/util-tanque.svg" width="360" height="240" loading="lazy"
+             alt="Ilustración de un fermentador cilindrocónico de acero inoxidable.">
+        <div class="equipo-pie">
+          <h3>Lois Carreira</h3>
+          <p class="equipo-rol">Cervecero · coladas y recetas</p>
+          <p>Monta la receta, hace la colada y decide cuándo está lista. Si la respuesta a algo es «una
+            semana más», suele ser suya.</p>
+        </div>
+      </li>
+      <li>
+        <img src="assets/util-densimetro.svg" width="360" height="240" loading="lazy"
+             alt="Ilustración de una probeta con un densímetro flotando.">
+        <div class="equipo-pie">
+          <h3>Sabela Paz</h3>
+          <p class="equipo-rol">Control y envasado</p>
+          <p>Lleva las densidades, los registros de cada lote y la línea de latas. Es quien pone el número
+            que acaba impreso en el envase.</p>
+        </div>
+      </li>
+      <li>
+        <img src="assets/util-saco.svg" width="360" height="240" loading="lazy"
+             alt="Ilustración de sacos de malta apilados junto a una pala.">
+        <div class="equipo-pie">
+          <h3>Xurxo Deibe</h3>
+          <p class="equipo-rol">Almacén, reparto y visitas</p>
+          <p>Descarga la malta, reparte los barriles por la comarca y guía las visitas de los sábados.
+            Conoce a todos los hosteleros por el nombre del perro.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= VISITAS ================= -->
+  <section class="visitas" id="visitas">
+    <div class="visitas-cab">
+      <p class="rotulo"><span>04</span> Visitas</p>
+      <h2 class="titular" data-revelar>Ver una colada por dentro</h2>
+      <p class="parrafo">Una hora y cuarto por la nave, con el ruido del molino incluido, y una cata de tres
+        cervezas al final. Precios de muestra inventados para esta demostración.</p>
+    </div>
+
+    <div class="visitas-rejilla">
+      <ul class="tarjetas-visita">
+        <li class="visita">
+          <p class="visita-nombre">Visita guiada</p>
+          <p class="visita-precio"><span>12</span><i>€ por persona</i></p>
+          <ul>
+            <li>Sábados a las 11:30</li>
+            <li>75 minutos, aforo de 14</li>
+            <li>Cata de tres cervezas al final</li>
+            <li>Mayores de 18 años</li>
+          </ul>
+        </li>
+        <li class="visita visita--destacada">
+          <p class="visita-etiqueta">Día de colada</p>
+          <p class="visita-nombre">Colada abierta</p>
+          <p class="visita-precio"><span>25</span><i>€ por persona</i></p>
+          <ul>
+            <li>Un jueves al mes, de 9:00 a 13:00</li>
+            <li>Aforo de 6, con botas y delantal</li>
+            <li>Se muele, se macera y se friega</li>
+            <li>Te llevas una lata del lote anterior</li>
+          </ul>
+        </li>
+        <li class="visita">
+          <p class="visita-nombre">Sin cata</p>
+          <p class="visita-precio"><span>6</span><i>€ por persona</i></p>
+          <ul>
+            <li>La misma visita, sin cerveza</li>
+            <li>Para quien conduce</li>
+            <li>Menores acompañados, sin cata</li>
+            <li>Refresco de la casa incluido</li>
+          </ul>
+        </li>
+      </ul>
+
+      <aside class="visitas-nota">
+        <h3>Cómo se reserva</h3>
+        <p>Por teléfono o por correo, hasta el viernes anterior. Si sois más de seis, escribid y montamos
+          un pase aparte.</p>
+        <h3>Qué hay que traer</h3>
+        <p>Calzado cerrado. La nave está a 16 grados en invierno y huele a malta durante toda la visita.</p>
+        <h3>Accesibilidad</h3>
+        <p>La nave está a ras de calle y no hay escalones hasta la sala de fermentación. Avisad al reservar
+          y adaptamos el recorrido.</p>
+        <p class="visitas-sello">Importes inventados · sitio de demostración</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= DÓNDE ================= -->
+  <section class="donde" id="donde">
+    <div class="donde-cab">
+      <p class="rotulo"><span>05</span> Dónde está</p>
+      <h2 class="titular" data-revelar>En la tienda del obrador y poco más</h2>
+      <p class="parrafo">No vendemos por internet ni estamos en supermercados. Es una decisión, no una pena:
+        sin filtrar y sin pasteurizar, la cerveza tiene que viajar en frío y poco.</p>
+    </div>
+
+    <ul class="canales">
+      <li>
+        <p class="canal-num">01</p>
+        <h3>Tienda del obrador</h3>
+        <p>Jueves y viernes de 17:00 a 20:30 y sábados de 11:00 a 14:30. Lata suelta, caja de doce y barril
+          con fianza del grifo.</p>
+      </li>
+      <li>
+        <p class="canal-num">02</p>
+        <h3>Mercado de Betanzos</h3>
+        <p>Primer sábado de cada mes por la mañana, con una mesa y una nevera. Suele acabarse la Corenta
+          antes de las doce.</p>
+      </li>
+      <li>
+        <p class="canal-num">03</p>
+        <h3>Hostelería de la comarca</h3>
+        <p>Repartimos barril a bares de la zona los martes. No publicamos la lista: cambia cada mes y
+          preferimos que preguntes en la barra.</p>
+      </li>
+      <li>
+        <p class="canal-num">04</p>
+        <h3>Pedidos de barril</h3>
+        <p>Para hostelería, con dos días de aviso. Grifo y enfriador en préstamo mientras haya barril
+          nuestro conectado.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= PREGUNTAS ================= -->
+  <section class="preguntas" id="preguntas">
+    <div class="preguntas-cab">
+      <p class="rotulo"><span>06</span> Preguntas</p>
+      <h2 class="titular" data-revelar>Lo que se pregunta en la nave</h2>
+    </div>
+    <div class="acordeon">
+      <details><summary>¿Se puede beber en el obrador?</summary>
+        <p>Solo la cata de la visita. No somos un bar ni tenemos licencia de hostelería: no hay barra, no
+          hay mesas y no se sirven consumiciones sueltas.</p></details>
+      <details><summary>¿Por qué está turbia?</summary>
+        <p>Porque no se filtra. Lo que ves en suspensión es levadura y proteína del propio proceso. Se
+          puede dejar el último dedo en la lata si molesta.</p></details>
+      <details><summary>¿Cuánto dura una lata?</summary>
+        <p>Cuatro meses desde la fecha de envasado, guardada en frío. La fecha va impresa junto al número
+          de lote. Pasado ese tiempo no es peligrosa, pero pierde el aroma del lúpulo.</p></details>
+      <details><summary>¿Hacéis cerveza sin alcohol o sin gluten?</summary>
+        <p>Sin alcohol, no. Sin gluten, tampoco: trabajamos con cebada y trigo en la misma nave y no
+          podríamos garantizar la ausencia de trazas.</p></details>
+      <details><summary>¿Vendéis a menores?</summary>
+        <p>No. Ni en la tienda, ni en el mercado, ni en las visitas con cata. En la visita sin cata pueden
+          entrar menores acompañados de un adulto.</p></details>
+      <details><summary>¿Se puede hacer una cerveza para un evento?</summary>
+        <p>Sí, con tres meses de antelación y un mínimo de 600 litros. La receta se decide entre los dos y
+          el lote sale con su número, como todos.</p></details>
+    </div>
+  </section>
+
+  <!-- ================= PEDIDOS ================= -->
+  <section class="pedidos" id="pedidos">
+    <div class="pedidos-cab">
+      <p class="rotulo"><span>07</span> Pedidos y contacto</p>
+      <h2 class="titular" data-revelar>Escríbenos y te contamos qué hay</h2>
+      <p class="parrafo">Para hostelería, pedidos grandes o una visita a medida. Si es para llevarte una
+        caja, basta con pasarte en horario de tienda.</p>
+    </div>
+
+    <div class="pedidos-rejilla">
+      <form class="formulario" id="formulario" novalidate>
+        <p class="formulario-aviso">Formulario de muestra: no envía nada a ningún servidor.</p>
+        <div class="campo-fila">
+          <div class="campo">
+            <label for="f-nombre">Nombre</label>
+            <input id="f-nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="f-correo">Correo</label>
+            <input id="f-correo" name="correo" type="email" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="campo-fila">
+          <div class="campo">
+            <label for="f-tipo">Qué necesitas</label>
+            <select id="f-tipo" name="tipo">
+              <option>Pedido de barril (hostelería)</option>
+              <option>Caja de latas</option>
+              <option>Visita guiada</option>
+              <option>Colada abierta</option>
+              <option>Cerveza para un evento</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="f-cantidad">Cantidad aproximada</label>
+            <input id="f-cantidad" name="cantidad" type="text" placeholder="p. ej. 2 barriles de 20 l">
+          </div>
+        </div>
+        <div class="campo">
+          <label for="f-mensaje">Cuéntanos</label>
+          <textarea id="f-mensaje" name="mensaje" rows="4"></textarea>
+        </div>
+        <label class="campo-check"><input type="checkbox" id="f-edad" name="edad" required> Soy mayor de 18 años.</label>
+        <label class="campo-check"><input type="checkbox" id="f-ok" name="ok" required> He leído el <a href="aviso-legal.html">aviso legal</a>.</label>
+        <button class="boton boton--magenta" type="submit" data-iman>Enviar</button>
+        <p class="formulario-respuesta" id="formulario-respuesta" role="status"></p>
+      </form>
+
+      <div class="pedidos-datos">
+        <dl>
+          <div><dt>Obrador y tienda</dt><dd>Rúa do Bocoi 4<br>15300 Betanzos · A Coruña</dd></div>
+          <div><dt>Teléfono</dt><dd><a href="tel:+34981000000">981 00 00 00</a><br><span class="muestra">Número de muestra: no funciona.</span></dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:obrador@trasfega.example">obrador@trasfega.example</a></dd></div>
+          <div><dt>Tienda</dt><dd>Jueves y viernes 17:00 – 20:30<br>Sábado 11:00 – 14:30</dd></div>
+          <div><dt>Visitas</dt><dd>Sábados 11:30 · colada abierta un jueves al mes</dd></div>
+        </dl>
+
+        <div class="mapa" id="mapa">
+          <button class="boton boton--linea" type="button" id="mapa-boton" data-iman>Cargar el mapa de Google</button>
+          <p class="mapa-nota">El mapa no se carga hasta que lo pides: así esta página no pone cookies de
+            terceros por su cuenta. La dirección es inventada, así que el mapa muestra la localidad, no una
+            calle concreta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie-rejilla">
+    <div class="pie-marca">
+      <img src="assets/logo.svg" width="54" height="54" alt="">
+      <p>TRASFEGA<br><span>Obrador de cerveza · Betanzos</span></p>
+    </div>
+    <div>
+      <h2>Obrador</h2>
+      <p>Rúa do Bocoi 4<br>15300 Betanzos · A Coruña</p>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <p><a href="tel:+34981000000">981 00 00 00</a><br><a href="mailto:obrador@trasfega.example">obrador@trasfega.example</a></p>
+    </div>
+    <div>
+      <h2>Tienda</h2>
+      <p>J y V 17:00 – 20:30<br>S 11:00 – 14:30</p>
+    </div>
+    <div>
+      <h2>Legal</h2>
+      <p><a href="aviso-legal.html">Aviso legal y privacidad</a><br><a href="#inicio">Volver arriba</a></p>
+    </div>
+  </div>
+  <p class="pie-edad"><span>+18</span> Venta y consumo prohibidos a menores de 18 años. Beber con cabeza, y nunca antes de conducir.</p>
+  <p class="sello">Sitio de demostración. TRASFEGA es un negocio ficticio; los datos, ilustraciones, números
+    de lote, cervezas y precios son de muestra y no corresponden a ninguna fábrica ni marca real.</p>
+</footer>
+
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
+  <p>Esta web solo guarda en tu navegador que ya has visto este aviso. No hay cookies de terceros ni
+    analítica, y el mapa de Google se carga únicamente si pulsas su botón.</p>
+  <div class="cookie-acciones">
+    <button class="boton boton--magenta" type="button" id="cookie-ok">De acuerdo</button>
+    <a class="cookie-mas" href="aviso-legal.html">Más información</a>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

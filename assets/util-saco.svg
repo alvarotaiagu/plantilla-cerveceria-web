@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240" role="img" aria-label="Ilustración de sacos de malta apilados junto a una pala">
+  <rect width="360" height="240" fill="#15171A"/>
+  <g stroke="#1D2026" stroke-width="1">
+    <path d="M0 40h360M0 80h360M0 120h360M0 160h360M0 200h360M40 0v240M80 0v240M120 0v240M160 0v240M200 0v240M240 0v240M280 0v240M320 0v240"/>
+  </g>
+  <path d="M30 202h300" stroke="#3A4048" stroke-width="3"/>
+  <g fill="#1E222A" stroke="#5A626D" stroke-width="3">
+    <path d="M62 202 v-58 c 0 -16, 12 -22, 26 -22 h44 c 14 0 26 6 26 22 v58 z"/>
+    <path d="M150 202 v-46 c 0 -14, 11 -20, 24 -20 h40 c 13 0 24 6 24 20 v46 z"/>
+    <path d="M104 122 v-40 c 0 -14, 11 -20, 24 -20 h40 c 13 0 24 6 24 20 v40 z"/>
+  </g>
+  <g stroke="#FF2E8A" stroke-width="3">
+    <path d="M84 160 h60M172 172 h44M126 96 h40"/>
+  </g>
+  <g stroke="#333B45" stroke-width="2">
+    <path d="M84 178 h60M172 186 h44M126 110 h40"/>
+  </g>
+  <path d="M262 202 v-92" stroke="#5A626D" stroke-width="8" stroke-linecap="round"/>
+  <path d="M262 110 c -26 0, -30 -26, -30 -38 h60 c 0 12, -4 38, -30 38 z" fill="#1E222A" stroke="#5A626D" stroke-width="3"/>
+  <path d="M250 202 h24" stroke="#3A4048" stroke-width="6" stroke-linecap="round"/>
+  <text x="24" y="228" fill="#8A929C" font-family="Chivo Mono, monospace" font-size="13" letter-spacing="2">MALTA · 280 KG POR COLADA</text>
+</svg>

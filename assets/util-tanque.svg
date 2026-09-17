@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240" role="img" aria-label="Ilustración de un fermentador cilindrocónico de acero inoxidable">
+  <rect width="360" height="240" fill="#15171A"/>
+  <g stroke="#1D2026" stroke-width="1">
+    <path d="M0 40h360M0 80h360M0 120h360M0 160h360M0 200h360M40 0v240M80 0v240M120 0v240M160 0v240M200 0v240M240 0v240M280 0v240M320 0v240"/>
+  </g>
+  <path d="M60 214h240" stroke="#3A4048" stroke-width="3"/>
+  <path d="M140 46 h80 v96 l-40 52 l-40 -52 Z" fill="#1E222A" stroke="#5A626D" stroke-width="3"/>
+  <ellipse cx="180" cy="46" rx="40" ry="13" fill="#262B34" stroke="#5A626D" stroke-width="3"/>
+  <path d="M180 33 v-14" stroke="#4A515B" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="180" cy="14" r="9" fill="#1E222A" stroke="#4A515B" stroke-width="3"/>
+  <path d="M148 80 h64 M148 110 h64" stroke="#333B45" stroke-width="2"/>
+  <rect x="216" y="70" width="10" height="70" rx="4" fill="#FF2E8A" opacity=".8"/>
+  <path d="M180 194 v18 h26" fill="none" stroke="#5A626D" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="212" cy="212" r="7" fill="#FF2E8A"/>
+  <path d="M120 150 h-34 v40" fill="none" stroke="#3A4048" stroke-width="5"/>
+  <text x="24" y="228" fill="#8A929C" font-family="Chivo Mono, monospace" font-size="13" letter-spacing="2">FERMENTADOR · 1.000 L</text>
+</svg>
