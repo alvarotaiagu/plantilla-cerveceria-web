@@ -242,7 +242,8 @@ html.has-motion .cursor{display:flex;}
   position:absolute;inset:0;opacity:0;transform:translateY(14px);
   transition:opacity .35s ease, transform .45s ease;pointer-events:none;
   background:none;border-top:0;padding:22px 0 0;
-  display:grid;grid-template-columns:200px 1fr;gap:clamp(16px,3vw,44px);align-items:start;
+  display:grid;grid-template-columns:180px 1fr;grid-template-rows:auto auto;
+  gap:6px clamp(16px,3vw,44px);align-items:start;align-content:start;
 }
 .trasfega-escena.esta-anclada .paso.esta-activa{opacity:1;transform:none;pointer-events:auto;}
 .trasfega-escena.esta-anclada .paso h3{font-size:clamp(1.6rem,3vw,2.4rem);}
