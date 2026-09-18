@@ -479,3 +479,29 @@ html.has-motion .cursor{display:flex;}
   html.has-motion [data-aparecer]{opacity:1;transform:none;}
   .cursor{display:none !important;}
 }
+
+
+/* ====================== cortina de entrada ================================
+   Obligatoria en todas las plantillas de la biblioteca. Se pinta SOLO cuando
+   hay movimiento: sin GSAP o con `prefers-reduced-motion` la regla de abajo la
+   borra del documento, así que la página no puede quedarse tapada. Además,
+   main.js tiene una red de seguridad por tiempo que la retira pase lo que pase.
+   ========================================================================== */
+.cortina{position:fixed;inset:0;z-index:400;overflow:hidden;}
+.cortina-centro{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:14px;text-align:center;padding:24px;}
+.cortina.esta-fuera{display:none;}
+html:not(.has-motion) .cortina{display:none;}
+@media (prefers-reduced-motion:reduce){.cortina{display:none;}}
+
+/* El gesto de la cervecería: el nivel baja como en un trasiego, y el menisco
+   —la curva de la superficie— va por delante y se aplana al final. */
+.cortina-nivel{position:absolute;inset:0;background:var(--panel);will-change:transform;}
+.cortina-menisco{position:absolute;left:-8%;right:-8%;top:-40px;height:80px;
+  background:var(--panel);border:2px solid var(--magenta);border-radius:50%;}
+.cortina-sifon{display:block;width:2px;height:clamp(60px,12vh,96px);background:var(--magenta);
+  transform:scaleY(0);transform-origin:50% 0;}
+.cortina-marca{font-family:var(--display);font-size:clamp(1.6rem,6vw,2.6rem);
+  letter-spacing:.2em;text-transform:uppercase;color:var(--hueso);margin:0;opacity:0;}
+.cortina-pie{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--humo);margin:0;opacity:0;}

@@ -571,11 +571,49 @@
     ScrollTrigger.refresh();
   }
 
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(arrancar);
-  } else {
-    window.addEventListener("load", arrancar);
+
+  /* --- Cortina de entrada ---------------------------------------------------
+     El gesto sale del concepto; la mecánica es la misma en toda la biblioteca.
+     Se retira SIEMPRE: sin GSAP y con movimiento reducido la hoja de estilos ni
+     la pinta, y aquí abajo hay una red de seguridad por tiempo. */
+  var elCortina = $("#cortina");
+  var cortinaFuera = false;
+
+  function quitarCortina() {
+    if (cortinaFuera) { return; }
+    cortinaFuera = true;
+    if (elCortina) { elCortina.classList.add("esta-fuera"); }
+    if (lenis) { lenis.start(); }
   }
+
+  function cortina(alHero) {
+    if (!elCortina) { alHero(); return; }
+    if (lenis) { lenis.stop(); }
+    try { window.scrollTo(0, 0); } catch (e) {}
+    var tl = gsap.timeline({ onComplete: quitarCortina });
+    tl.to(".cortina-sifon", { scaleY: 1, duration: .7, ease: "expo.inOut" })
+      .to(".cortina-marca", { opacity: 1, duration: .45, ease: "power2.out" }, "-=.28")
+      .to(".cortina-pie", { opacity: 1, duration: .35, ease: "power2.out" }, "-=.24")
+      .add(alHero, "+=.12")
+      .to(".cortina-centro", { opacity: 0, duration: .3, ease: "power2.in" })
+      .to(".cortina-nivel", { yPercent: 101, duration: 1.15, ease: "expo.inOut" }, "-=.12")
+      .to(".cortina-menisco", { scaleY: .35, duration: 1.15, ease: "expo.inOut" }, "<");
+  }
+
+  var yaArranco = false;
+  function arrancarUnaVez() { if (yaArranco) { return; } yaArranco = true; arrancar(); }
+  function abrirLaPagina() { cortina(arrancarUnaVez); }
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(abrirLaPagina);
+  } else {
+    window.addEventListener("load", abrirLaPagina);
+  }
+
+  /* Red de seguridad: si las tipografías no resuelven, si una animación se
+     atasca o si algo revienta a mitad, ni la cortina se queda puesta ni el
+     arranque se pierde. */
+  setTimeout(function () { quitarCortina(); arrancarUnaVez(); }, 4600);
 
   if (mqReducido.addEventListener) {
     mqReducido.addEventListener("change", function () { window.location.reload(); });

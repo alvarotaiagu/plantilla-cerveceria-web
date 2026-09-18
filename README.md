@@ -164,3 +164,20 @@ móvil, el botón del mapa y el formulario (incluida la casilla de +18).
 
 Plantilla de muestra propiedad de su autor. El contenido es ficticio y no puede
 presentarse como un negocio real.
+
+---
+
+## La cortina de entrada
+
+Obligatoria en toda la biblioteca, y **el gesto sale del concepto de esta
+plantilla**, no es la misma cortina repintada: aquí el sifón baja, y el **nivel se trasiega**: la superficie entera desciende con su menisco —la curva del líquido— por delante, aplanándose al final.
+
+La mecánica es la de siempre: línea de tiempo encadenada, `expo.inOut`, borde
+curvo y **entrega limpia al hero** —el revelado del titular arranca mientras la
+cortina todavía se está yendo, no después—.
+
+**Se retira siempre.** Sin GSAP y con `prefers-reduced-motion` la hoja de estilos
+ni la pinta (`html:not(.has-motion) .cortina{display:none}`), y con movimiento hay
+una red de seguridad por tiempo en `main.js` que la quita y lanza el arranque
+pase lo que pase, para que la página no pueda quedarse tapada si una animación se
+atasca o las tipografías no resuelven.
